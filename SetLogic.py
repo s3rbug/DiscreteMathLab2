@@ -18,15 +18,11 @@ class SetLogic:
 
     def add_to_field(self, which, data: set):
         self.fields[which] |= data
-        print(self.fields[which])
-
-    def change_first(self, first: bool):
-        self.which_to_change = [first, self.which_to_change[1]]
-
-    def change_second(self, second: bool):
-        self.which_to_change = [self.which_to_change[0], second]
 
     def clear_field(self, which):
         self.fields[which] = set()
+
+    def set_radio_button(self, which, is_checked):
+        self.which_to_change[which] = is_checked
 
 

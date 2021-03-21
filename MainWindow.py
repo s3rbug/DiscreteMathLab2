@@ -24,11 +24,6 @@ def print_variant():
 
 
 class MainWindow(QtWidgets.QMainWindow):
-    def open_window(self, which):
-        def foo():
-            self.windows[which].show()
-        return foo
-
     def __init__(self):
         super(MainWindow, self).__init__()
         uic.loadUi('MainWindowForm.ui', self)
@@ -40,6 +35,11 @@ class MainWindow(QtWidgets.QMainWindow):
             self.window_buttons[i].clicked.connect(self.open_window(i))
         self.information.triggered.connect(print_variant)
         self.show()
+
+    def open_window(self, which):
+        def foo():
+            self.windows[which].show()
+        return foo
 
 
 if __name__ == "__main__":
