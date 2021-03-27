@@ -6,13 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
+    <width>600</width>
     <height>250</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>250</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
-    <width>500</width>
+    <width>600</width>
     <height>250</height>
    </size>
   </property>
@@ -90,7 +96,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>500</width>
+     <width>600</width>
      <height>21</height>
     </rect>
    </property>
@@ -112,7 +118,6 @@
    </widget>
    <addaction name="menu"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="information">
    <property name="text">
     <string>Про студента</string>
@@ -126,6 +131,16 @@
   <action name="save_all_files">
    <property name="text">
     <string>Зберегти усі обчислення до файлу</string>
+   </property>
+  </action>
+  <action name="toggle_theme">
+   <property name="text">
+    <string>Тест</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
    </property>
   </action>
  </widget>

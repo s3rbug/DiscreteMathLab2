@@ -51,6 +51,11 @@
           </item>
           <item>
            <widget class="QListWidget" name="list_male">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
             <property name="selectionMode">
              <enum>QAbstractItemView::MultiSelection</enum>
             </property>
@@ -105,12 +110,21 @@
            </widget>
           </item>
           <item>
-           <widget class="QListWidget" name="list_b"/>
+           <widget class="QListWidget" name="list_b">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="itemAlignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
-             <widget class="QPushButton" name="pushButton_3">
+             <widget class="QPushButton" name="save_b">
               <property name="text">
                <string>Зберегти</string>
               </property>
@@ -144,6 +158,11 @@
           </item>
           <item>
            <widget class="QListWidget" name="list_female">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
             <property name="selectionMode">
              <enum>QAbstractItemView::MultiSelection</enum>
             </property>
@@ -198,12 +217,21 @@
            </widget>
           </item>
           <item>
-           <widget class="QListWidget" name="list_a"/>
+           <widget class="QListWidget" name="list_a">
+            <property name="font">
+             <font>
+              <pointsize>12</pointsize>
+             </font>
+            </property>
+            <property name="itemAlignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
           </item>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="QPushButton" name="pushButton">
+             <widget class="QPushButton" name="save_a">
               <property name="text">
                <string>Зберегти</string>
               </property>
@@ -222,11 +250,28 @@
         </item>
        </layout>
       </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QPushButton" name="save_to_file">
+          <property name="text">
+           <string>Зберегти до файлу</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="load_from_file">
+          <property name="text">
+           <string>Завантажити з файлу</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
      </layout>
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="information">
    <property name="text">
     <string>Про студента</string>

@@ -15,46 +15,92 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>15</number>
+    </property>
+    <property name="topMargin">
+     <number>15</number>
+    </property>
+    <property name="rightMargin">
+     <number>15</number>
+    </property>
+    <property name="bottomMargin">
+     <number>15</number>
+    </property>
     <item>
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="0">
-       <widget class="QTableWidget" name="tableWidget"/>
+       <widget class="QTableWidget" name="table">
+        <property name="styleSheet">
+         <string notr="true">font-size: 12px</string>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>200</number>
+        </attribute>
+        <attribute name="verticalHeaderDefaultSectionSize">
+         <number>50</number>
+        </attribute>
+       </widget>
       </item>
       <item row="1" column="0">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QRadioButton" name="radioButton">
+         <widget class="QRadioButton" name="radio_union">
           <property name="text">
            <string>R ∪S</string>
           </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <attribute name="buttonGroup">
+           <string notr="true">radio_group</string>
+          </attribute>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_2">
+         <widget class="QRadioButton" name="radio_inter">
           <property name="text">
            <string>R ∩ S</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">radio_group</string>
+          </attribute>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_3">
+         <widget class="QRadioButton" name="radio_difference1">
           <property name="text">
            <string>R \ S</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">radio_group</string>
+          </attribute>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_4">
+         <widget class="QRadioButton" name="radio_difference2">
           <property name="text">
            <string>U \ R</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">radio_group</string>
+          </attribute>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="radioButton_5">
+         <widget class="QRadioButton" name="radio_reverse">
           <property name="text">
            <string>S^-1</string>
           </property>
+          <attribute name="buttonGroup">
+           <string notr="true">radio_group</string>
+          </attribute>
          </widget>
         </item>
        </layout>
@@ -63,7 +109,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="information">
    <property name="text">
     <string>Про студента</string>
@@ -77,4 +122,7 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="radio_group"/>
+ </buttongroups>
 </ui>

@@ -1,5 +1,8 @@
 import os
+import random
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QTableWidgetItem
 
 
 def show_message(text: str, message_type=QMessageBox.Warning, title="Увага!"):
@@ -40,3 +43,25 @@ def to_set(text: str):
 def create_folder():
     if not os.path.exists("logs/"):
         os.mkdir("logs")
+
+
+def numerate(container):
+    return range(len(container))
+
+
+def print_2d(array):
+    for i in array:
+        for j in i:
+            print(j, end=" ")
+        print()
+    print()
+
+
+def bool_chance(chance):
+    return random.random() < chance
+
+
+def center_item(data):
+    item = QTableWidgetItem(str(data))
+    item.setTextAlignment(Qt.AlignCenter)
+    return item

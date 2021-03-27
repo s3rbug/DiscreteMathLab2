@@ -1,4 +1,5 @@
 import sys
+import qdarkstyle
 from PyQt5.QtWidgets import QApplication, QMessageBox
 from PyQt5.QtGui import QFont, QFontDatabase
 from PyQt5 import QtWidgets, uic
@@ -6,7 +7,7 @@ from SecondWindow import SecondWindow
 from ThirdWindow import ThirdWindow
 from FourthWindow import FourthWindow
 from SetLogic import SetLogic
-from utils import show_message
+from utils import show_message, numerate
 
 
 def print_variant():
@@ -29,9 +30,10 @@ class MainWindow(QtWidgets.QMainWindow):
         uic.loadUi('MainWindowForm.ui', self)
         self.setWindowTitle("Вікно 1")
         self.logic = SetLogic()
-        self.windows = [SecondWindow(self.logic), ThirdWindow(), FourthWindow()]
+        self.windows = [SecondWindow(self.logic), ThirdWindow(self.logic), FourthWindow(self.logic)]
+        self.logic.set_synchronize(self.synchronize)
         self.window_buttons = [self.window_button2, self.window_button3, self.window_button4]
-        for i in range(len(self.window_buttons)):
+        for i in numerate(self.window_buttons):
             self.window_buttons[i].clicked.connect(self.open_window(i))
         self.information.triggered.connect(print_variant)
         self.show()
@@ -41,6 +43,10 @@ class MainWindow(QtWidgets.QMainWindow):
             self.windows[which].show()
         return foo
 
+    def synchronize(self):
+        for i in numerate(self.windows):
+            self.windows[i].update_value()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -49,4 +55,5 @@ if __name__ == "__main__":
     font = QFont("Lucida Grande")
     QApplication.setFont(font)
     widget = MainWindow()
+    app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyqt5'))
     app.exec_()
