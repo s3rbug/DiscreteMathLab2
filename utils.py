@@ -3,6 +3,7 @@ import random
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QTableWidgetItem
+from PyQt5.QtGui import QFont
 
 
 def show_message(text: str, message_type=QMessageBox.Warning, title="Увага!"):
@@ -61,7 +62,8 @@ def bool_chance(chance):
     return random.random() < chance
 
 
-def center_item(data):
+def center_item(data, font_size=16):
     item = QTableWidgetItem(str(data))
     item.setTextAlignment(Qt.AlignCenter)
+    item.setFont(QFont("Lucida Grande", font_size))
     return item

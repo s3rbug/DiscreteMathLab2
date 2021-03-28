@@ -23,7 +23,7 @@ class ThirdWindow(QMainWindow):
             self.tables[i].setHorizontalHeaderLabels(Person.list_str(self.logic.fields[1]))
             for j in numerate(self.logic.fields[0]):
                 for k in numerate(self.logic.fields[1]):
-                    self.tables[i].setItem(j, k, center_item(self.logic.relations[i][j][k]))
+                    self.tables[i].setItem(j, k, center_item(self.logic.relations[i][j][k], 12))
         # load A and B
         for which in numerate(self.logic.fields):
             self.names_list[which].clear()
